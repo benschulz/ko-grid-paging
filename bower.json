@@ -1,0 +1,18 @@
+{
+  "name": "ko-grid-paging",
+  "main": "dist/ko-grid-paging.js",
+  "description": "A ko-grid extension for paging.",
+  "authors": ["Ben Schulz (https://github.com/benschulz)"],
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "ko-grid",
+    "paging"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/benschulz/ko-grid-paging.git"
+  },
+  "dependencies": {
+    "ko-grid": "benschulz/ko-grid"
+  }
+}

@@ -1,0 +1,21 @@
+<!-- ko with: extensions.paging -->
+<div class="ko-grid-paging" data-bind="if: pageCount() > 1, click: __handleClick">
+    <span data-bind="text: __message"></span>
+    <button class="ko-grid-toolbar-button ko-grid-paging-button" data-bind="visible: pageIndex() - maximumStepSize() > 0">1</button>
+    <span data-bind="visible: pageIndex() - maximumStepSize() > 1">&hellip;</span>
+    <button data-bind="indexedRepeat: {
+                forEach: __adjacentPageIndizes,
+                indexedBy: function(i) { return '' + i; },
+                as: 'i'
+            }"
+            data-repeat-bind="text: i() + 1, css: {
+                'pressed': pageIndex() == i(),
+                'ko-grid-toolbar-button': true,
+                'current-page': pageIndex() == i(),
+                'ko-grid-paging-button': true
+            }">
+    </button>
+    <span data-bind="visible: pageIndex() + maximumStepSize() + 2 < pageCount()">&hellip;</span>
+    <button class="ko-grid-toolbar-button ko-grid-paging-button" tabIndex="-1" data-bind="visible: pageIndex() + maximumStepSize() + 1 < pageCount(), text: pageCount">?</button>
+</div>
+<!-- /ko -->
